@@ -187,6 +187,9 @@ class FOQElasticaExtension extends Extension
             if (isset($type['search_analyzer'])) {
                 $this->indexConfigs[$indexName]['config']['mappings'][$name]['search_analyzer'] = $type['search_analyzer'];
             }
+            if (isset($type['parent'])) {
+                $this->indexConfigs[$indexName]['config']['mappings'][$name]['_parent'] = $type['parent'];
+            }
         }
     }
 
